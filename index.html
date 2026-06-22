@@ -7,7 +7,6 @@
     <h1>Prueba - Asistente Municipal</h1>
     <p>Abre el chat abajo a la derecha.</p>
 
-    <!-- WIDGET ESTÁNDAR (modo antiguo, compatible con bots) -->
     <script>
     var LHC_API = LHC_API||{};
     LHC_API.args = {
@@ -27,7 +26,7 @@
         po.setAttribute('crossorigin','anonymous'); 
         po.async = true;
         var date = new Date();
-        // USAR lhc.js en lugar de widgetv2/index.js
+        // WIDGET ANTIGUO (lhc.js en lugar de widgetv2/index.js)
         po.src = '//www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/lhc.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
         var s = document.getElementsByTagName('script')[0]; 
         s.parentNode.insertBefore(po, s);
