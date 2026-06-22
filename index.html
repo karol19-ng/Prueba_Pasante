@@ -11,13 +11,15 @@
     var LHC_API = LHC_API||{};
     LHC_API.args = {
         mode:'widget',
-        lhc_base_url:'//www.muniparaiso.go.cr/app/webroot/chat/',
+        lhc_base_url:'https://www.muniparaiso.go.cr/app/webroot/chat/',
         wheight:450,
         wwidth:350,
         pheight:520,
         pwidth:500,
         leaveamessage:true,
-        check_messages:false
+        theme:1,
+        check_messages:false,
+        lang:'esp/'
     };
     (function() {
         var po = document.createElement('script'); 
@@ -25,7 +27,7 @@
         po.setAttribute('crossorigin','anonymous'); 
         po.async = true;
         var date = new Date();
-        po.src = '//www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+        po.src = 'https://www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
         var s = document.getElementsByTagName('script')[0]; 
         s.parentNode.insertBefore(po, s);
     })();
