@@ -1,31 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Prueba - Asistente Municipal</title>
+    <meta charset="UTF-8">
+    <title>Asistente Municipal - Municipalidad de Paraíso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 650px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .info-box h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .keyword {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .hint {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(0, 255, 136, 0.2);
+            border-radius: 10px;
+            border-left: 4px solid #00ff88;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+
+        .muni-logo {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Prueba - Asistente Municipal</h1>
-    <p>Abre el chat abajo a la derecha.</p>
+    <div class="container">
+        <div class="muni-logo">🏛️</div>
+        <h1>Municipalidad de Paraíso</h1>
+        <p class="subtitle">Asistente Virtual - Prueba de Chatbot</p>
+        
+        <div class="info-box">
+            <h3>💬 Escribe al chat para probar el bot:</h3>
+            <div class="keywords">
+                <span class="keyword">hola</span>
+                <span class="keyword">precios</span>
+                <span class="keyword">horarios</span>
+                <span class="keyword">contacto</span>
+                <span class="keyword">trámites</span>
+            </div>
+        </div>
 
-    <!-- SOLO CHATBOX (funciona, pero sin saludo automático) -->
-    <script type="text/javascript">
-    var LHCChatboxOptions = {
-        hashchatbox:'empty',
-        identifier:'default',
-        status_text:'Asistente Municipal'
-    };
-    (function() {
-        var po = document.createElement('script'); 
-        po.type = 'text/javascript'; 
-        po.async = true;
-        po.src = '//www.muniparaiso.go.cr/app/webroot/chat/index.php/chatbox/getstatus/(position)/bottom_right/(top)/300/(units)/pixels/(width)/300/(height)/300/(chat_height)/220';
-        var s = document.getElementsByTagName('script')[0]; 
-        s.parentNode.insertBefore(po, s);
-    })();
+        <div class="hint">
+            <p>👋 El bot responderá automáticamente según lo que escribas.</p>
+        </div>
+
+        <div class="footer">
+            <p>Live Helper Chat - Modo Chat Estándar | Municipalidad de Paraíso</p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHAT ESTÁNDAR (soporta bots)                 -->
+    <!-- ============================================ -->
+    <script>
+        var LHC_API = LHC_API || {};
+        LHC_API.args = {
+            mode: 'widget',
+            lhc_base_url: '//www.muniparaiso.go.cr/app/webroot/chat/',
+            wheight: 450,
+            wwidth: 350,
+            pheight: 520,
+            pwidth: 500,
+            department: [1],  // ← ID de tu departamento TI
+            leaveamessage: true,
+            check_messages: false,
+            proactive: false,
+            lang: 'esp/'
+        };
+        
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.setAttribute('crossorigin', 'anonymous');
+            po.async = true;
+            var date = new Date();
+            po.src = '//www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/lhc.js?' + 
+                     ("" + date.getFullYear() + date.getMonth() + date.getDate());
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
     </script>
-
-</body>
-</html>
 
 </body>
 </html>
