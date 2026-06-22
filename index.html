@@ -90,6 +90,23 @@
             font-size: 3em;
             margin-bottom: 15px;
         }
+
+        /* ============================================ */
+        /* FORZAR VISIBILIDAD DEL CHATBOX              */
+        /* ============================================ */
+        #lhc_chatbox_container {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 99999 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        #lhc_container_chatbox {
+            z-index: 99999 !important;
+        }
     </style>
 </head>
 <body>
@@ -99,7 +116,7 @@
         <p class="subtitle">Asistente Virtual - Prueba de Chatbot</p>
         
         <div class="info-box">
-            <h3>💬 Escribe al chat para probar el bot:</h3>
+            <h3>💬 Escribe al chat para probar:</h3>
             <div class="keywords">
                 <span class="keyword">hola</span>
                 <span class="keyword">precios</span>
@@ -110,42 +127,27 @@
         </div>
 
         <div class="hint">
-            <p>👋 El bot responderá automáticamente según lo que escribas.</p>
+            <p>👋 El chat está en modo Chatbox. El bot NO responde automáticamente (limitación técnica).</p>
         </div>
 
         <div class="footer">
-            <p>Live Helper Chat - Modo Chat Estándar | Municipalidad de Paraíso</p>
+            <p>Live Helper Chat - Chatbox | Municipalidad de Paraíso</p>
         </div>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CHAT ESTÁNDAR (soporta bots)                 -->
-    <!-- ============================================ -->
-    <script>
-        var LHC_API = LHC_API || {};
-        LHC_API.args = {
-            mode: 'widget',
-            lhc_base_url: '//www.muniparaiso.go.cr/app/webroot/chat/',
-            wheight: 450,
-            wwidth: 350,
-            pheight: 520,
-            pwidth: 500,
-            department: [1],  // ← ID de tu departamento TI
-            leaveamessage: true,
-            check_messages: false,
-            proactive: false,
-            lang: 'esp/'
+    <!-- CHATBOX -->
+    <script type="text/javascript">
+        var LHCChatboxOptions = {
+            hashchatbox: 'empty',
+            identifier: 'default',
+            status_text: 'Asistente Municipal'
         };
-        
         (function() {
-            var po = document.createElement('script');
-            po.type = 'text/javascript';
-            po.setAttribute('crossorigin', 'anonymous');
+            var po = document.createElement('script'); 
+            po.type = 'text/javascript'; 
             po.async = true;
-            var date = new Date();
-            po.src = '//www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/lhc.js?' + 
-                     ("" + date.getFullYear() + date.getMonth() + date.getDate());
-            var s = document.getElementsByTagName('script')[0];
+            po.src = '//www.muniparaiso.go.cr/app/webroot/chat/index.php/chatbox/getstatus/(position)/bottom_right/(top)/300/(units)/pixels/(width)/300/(height)/300/(chat_height)/220';
+            var s = document.getElementsByTagName('script')[0]; 
             s.parentNode.insertBefore(po, s);
         })();
     </script>
