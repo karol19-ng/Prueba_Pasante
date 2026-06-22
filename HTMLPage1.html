@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba Chatbot Municipal</title>
+</head>
+<body>
+    <h1>Prueba - Asistente Municipal</h1>
+    <p>Abre el chat abajo a la derecha.</p>
+
+    <!-- CHATBOX MUNICIPAL -->
+    <script type="text/javascript">
+        var LHCChatboxOptions = { hashchatbox: 'empty', identifier: 'default', status_text: 'Chatbox' };
+        (function () {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = '//www.muniparaiso.go.cr/app/webroot/chat/index.php/chatbox/getstatus/(position)/bottom_right/(top)/300/(units)/pixels/(width)/300/(height)/300/(chat_height)/220';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+
+</body>
+</html>
