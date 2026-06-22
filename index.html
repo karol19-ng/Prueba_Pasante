@@ -1,89 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Prueba - Asistente Municipal con Bot</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            max-width: 600px;
-        }
-        h1 { font-size: 2.2em; margin-bottom: 15px; }
-        p { font-size: 1.1em; line-height: 1.6; }
-        .info {
-            background: rgba(255,255,255,0.2);
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: left;
-        }
-        .info h3 { color: #ffd700; margin-top: 0; }
-        .info ul { list-style: none; padding: 0; }
-        .info li { padding: 5px 0; padding-left: 25px; position: relative; }
-        .info li:before { content: "✓"; position: absolute; left: 0; color: #00ff88; }
-    </style>
+    <title>Prueba - Asistente Municipal</title>
 </head>
 <body>
-    <div class="container">
-        <h1>🏛️ Municipalidad de Paraíso</h1>
-        <p>Prueba del Asistente Virtual con Bot automático</p>
-        
-        <div class="info">
-            <h3>💡 Instrucciones:</h3>
-            <ul>
-                <li>Haz clic en el botón de chat (abajo a la derecha)</li>
-                <li>El bot debería saludarte automáticamente</li>
-                <li>Si dice "Offline", el departamento no está configurado como online 24/7</li>
-            </ul>
-        </div>
-    </div>
+    <h1>Prueba - Asistente Municipal</h1>
+    <p>Abre el chat abajo a la derecha.</p>
 
-    <!-- ============================================ -->
-    <!-- WIDGET ESTÁNDAR DE LIVE HELPER CHAT         -->
-    <!-- (Soporta bots - NO es Chatbox)              -->
-    <!-- ============================================ -->
-    
     <script>
-        var LHC_API = LHC_API || {};
-        LHC_API.args = {
-            mode: 'widget',                                    // ← MODO WIDGET (no chatbox)
-            lhc_base_url: '//www.muniparaiso.go.cr/app/webroot/chat/',
-            wheight: 450,
-            wwidth: 350,
-            pheight: 520,
-            pwidth: 500,
-            leaveamessage: true,
-            check_messages: false,
-            proactive: false,
-            lang: 'esp/'
-        };
-        
-        (function() {
-            var po = document.createElement('script');
-            po.type = 'text/javascript';
-            po.setAttribute('crossorigin', 'anonymous');
-            po.async = true;
-            var date = new Date();
-            po.src = '//www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/widgetv2/index.js?' + 
-                     ("" + date.getFullYear() + date.getMonth() + date.getDate());
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(po, s);
-        })();
+    var LHC_API = LHC_API||{};
+    LHC_API.args = {
+        mode:'widget',
+        lhc_base_url:'//www.muniparaiso.go.cr/app/webroot/chat/',
+        wheight:450,
+        wwidth:350,
+        pheight:520,
+        pwidth:500,
+        leaveamessage:true,
+        check_messages:false
+    };
+    (function() {
+        var po = document.createElement('script'); 
+        po.type = 'text/javascript'; 
+        po.setAttribute('crossorigin','anonymous'); 
+        po.async = true;
+        var date = new Date();
+        po.src = '//www.muniparaiso.go.cr/app/webroot/chat/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+        var s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(po, s);
+    })();
     </script>
 
 </body>
